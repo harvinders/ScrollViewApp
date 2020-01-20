@@ -1,0 +1,29 @@
+﻿<UserControl
+    x:Class="ScrollViewApp.Views.StoryView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ScrollViewApp.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    Width="200"
+    d:DesignWidth="400">
+
+        <Grid
+            x:Name="Grid"
+            Padding="4"
+            Background="Transparent"
+            CornerRadius="2"
+            BorderBrush="{ThemeResource SystemControlBackgroundListMediumRevealBorderBrush}"
+            BorderThickness="1"
+            RowSpacing="12">
+            <TextBlock
+                x:Name="Title"
+                Text="{x:Bind ViewModel.Name}"
+                Grid.Row="1"
+                Foreground="{ThemeResource SystemControlForegroundBaseMediumHighBrush}"
+                Style="{ThemeResource TitleTextBlockStyle}" />
+        </Grid>
+
+</UserControl>
