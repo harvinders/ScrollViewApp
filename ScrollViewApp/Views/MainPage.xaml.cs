@@ -13,13 +13,17 @@ namespace ScrollViewApp.Views
     public sealed partial class MainPage : Page
     {
         public MainViewModel ViewModel { get; } = new MainViewModel();
-        double relativeVerticalOffset;
-        int index;
+        static double relativeVerticalOffset;
+        static int index;
 
         public MainPage()
         {
             InitializeComponent();
+
+            this.ItemRepeater.Loaded += OnLoaded;
         }
+
+
 
         protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
         {
@@ -28,6 +32,7 @@ namespace ScrollViewApp.Views
             var anchorProvider = scroller as IScrollAnchorProvider;
             var anchor = anchorProvider.CurrentAnchor;
 
+            //var anchor = ScrollHost.CurrentAnchor;
             if (null == anchor)
                 return;
 
@@ -36,10 +41,8 @@ namespace ScrollViewApp.Views
             var anchorBounds = anchor.TransformToVisual(this.ScrollViewer).TransformBounds(new Rect(0, 0, topicView.ActualWidth, topicView.ActualHeight));
             relativeVerticalOffset = anchorBounds.Top;
         }
-
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        private void OnLoaded(object sender, RoutedEventArgs e)
         {
-            base.OnNavigatedTo(e);
             if (index == 0)
                 return;
 
@@ -52,6 +55,10 @@ namespace ScrollViewApp.Views
                 VerticalOffset = relativeVerticalOffset
             });
 
+        }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
         }
     }
 }

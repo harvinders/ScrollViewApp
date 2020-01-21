@@ -14,7 +14,7 @@ namespace ScrollViewApp.ViewModels
             {
                 new TopicViewModel()
                 {
-                    Name = "Current affairs", Stories = new List<StoryViewModel>()
+                    Name = "Current affairs 1", Stories = new List<StoryViewModel>()
                     {
                         new StoryViewModel("A"),
                         new StoryViewModel("B"),
@@ -24,7 +24,7 @@ namespace ScrollViewApp.ViewModels
                 },
                 new TopicViewModel()
                 {
-                    Name = "Jobs", Stories = new List<StoryViewModel>()
+                    Name = "Jobs 2", Stories = new List<StoryViewModel>()
                     {
                         new StoryViewModel("P"),
                         new StoryViewModel("Q"),
@@ -34,7 +34,7 @@ namespace ScrollViewApp.ViewModels
                 },
                 new TopicViewModel()
                 {
-                    Name = "Movies", Stories = new List<StoryViewModel>()
+                    Name = "Movies 3", Stories = new List<StoryViewModel>()
                     {
                         new StoryViewModel("1"),
                         new StoryViewModel("2"),
@@ -47,7 +47,7 @@ namespace ScrollViewApp.ViewModels
                 },
                 new TopicViewModel()
                 {
-                    Name = "Rental", Stories = new List<StoryViewModel>()
+                    Name = "Rental 4", Stories = new List<StoryViewModel>()
                     {
                         new StoryViewModel("P"),
                         new StoryViewModel("Q"),
@@ -57,7 +57,7 @@ namespace ScrollViewApp.ViewModels
                 },
                 new TopicViewModel()
                 {
-                    Name = "News", Stories = new List<StoryViewModel>()
+                    Name = "News 5", Stories = new List<StoryViewModel>()
                     {
                         new StoryViewModel("I"),
                         new StoryViewModel("II")

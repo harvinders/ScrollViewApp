@@ -3,6 +3,7 @@
 using ScrollViewApp.Services;
 
 using Windows.ApplicationModel.Activation;
+using Windows.ApplicationModel.Core;
 using Windows.UI.Xaml;
 
 namespace ScrollViewApp

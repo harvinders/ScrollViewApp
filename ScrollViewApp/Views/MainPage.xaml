@@ -16,8 +16,20 @@
                 The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
                 Place your content here.
             -->
-            <!--<controls:ItemsRepeaterScrollHost  Grid.Row="2" x:Name="CategoriesHost">-->
             <controls:ScrollViewer x:Name="ScrollViewer">
+                <controls:ItemsRepeater x:Name="ItemRepeater" ItemsSource="{x:Bind ViewModel.Topics}">
+                    <controls:ItemsRepeater.ItemTemplate>
+                        <DataTemplate x:DataType="viewModels:TopicViewModel">
+                            <views:TopicView ViewModel="{x:Bind Mode=OneWay}" />
+                        </DataTemplate>
+                    </controls:ItemsRepeater.ItemTemplate>
+                    <controls:ItemsRepeater.Layout>
+                        <controls:StackLayout Orientation="Vertical" Spacing="12" />
+                    </controls:ItemsRepeater.Layout>
+                </controls:ItemsRepeater>
+            </controls:ScrollViewer>
+            <!--<controls:ItemsRepeaterScrollHost  x:Name="ScrollHost">
+                <ScrollViewer x:Name="ScrollViewer">
                     <controls:ItemsRepeater x:Name="ItemRepeater" ItemsSource="{x:Bind ViewModel.Topics}">
                         <controls:ItemsRepeater.ItemTemplate>
                             <DataTemplate x:DataType="viewModels:TopicViewModel">
@@ -28,8 +40,9 @@
                             <controls:StackLayout Orientation="Vertical" Spacing="12" />
                         </controls:ItemsRepeater.Layout>
                     </controls:ItemsRepeater>
-                </controls:ScrollViewer>
-            <!--</controls:ItemsRepeaterScrollHost>-->
+                </ScrollViewer>
+
+            </controls:ItemsRepeaterScrollHost>-->
         </Grid>
     </Grid>
 </Page>
